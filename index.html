@@ -78,12 +78,29 @@
                 </li>
             </ul>
         </section>
-        <section class="room">
+        <section class="rooms">
             <h2>Номера</h2>
-            <img src="img/room-1" alt="Комната 1">
+            <div class="room">
+                <img src="img/room-1" alt="Комната 1">
+                <h3>Эконом плюс</h3>
+                <ul class="room-feature">
+                    <li class="room-feature-item">Площадь &#8211; 0,90 м2</li>
+                    <li class="room-feature-item">Размеры (ШхГхВ) - 90х100х180 см</li>
+                    <li class="room-feature-item">Цена за сутки: 200₽</li>
+                </ul>
+            </div>
             <fieldset>
                 <legend>Забронировать номер</legend>
-                <input type="text" name="name" id="name" value="Ваше имя">
+                <input type="text" name="name" id="name" placeholder="Ваше имя">
+                <input type="text" name="name-cat" id="name-cat" placeholder="Имя Питомца">
+                <input type="tel" name="tel" id="tel" placeholder="Телефон">
+                <input type="email" name="email" id="email" placeholder="E-mail">
+                <p>Дата заезда с
+                    <input type="date" name="date1" id="date1" placeholder="26.01.2020">
+                    по
+                    <input type="date" name="date2" id="date2" placeholder="26.02.2020">
+                </p>
+                <input type="submit" value="Отрпавить заявку" name="submit" id="submit">
             </fieldset>
         </section>
         <section class="comments">
