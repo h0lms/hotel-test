@@ -10,7 +10,7 @@
 <body>
     <header class="main-header">
         <nav class="main-navigation">
-            <a class="logo">
+            <a href="index.html" class="logo">
                 <img src="img/logo.png" alt="Логотип отеля Котейка" width="63" height="52">
             </a>
             <ul class="navigation-list">
@@ -30,101 +30,152 @@
         </nav>
     </header>
     <main>
-        <h1 class="visually-hidden">Номера отеля Котейка</h1>
-        <section class="filter">
-            <h2 class="visually-hidden">Поиск номера</h2>
-            <form action="#" method="POST">
-                <label for="price">Цена за сутки, ₽
-                    <input type="text" name="price" id="price-from" placeholder="от 100">
-                    <input type="text" name="price" id="price-before" placeholder="до 600">
-                </label>
-                <label for="area">Площадь
-                    <input type="radio" value="0,62" name="area" checked> 0,62 м2
-                    <input type="radio" value="0,90" name="area" checked> 0,90 м2
-                    <input type="radio" value="1,13" name="area" checked> 1,13 м2
-                    <input type="radio" value="1,56" name="area" checked> 1,56 м2
-                    <input type="radio" value="2,56" name="area" checked> 2,56 м2
-                    <input type="radio" value="2,88" name="area" checked> 2.88 м2
-                </label>
-                <label for="features">Оснащение номера
-                    <input type="radio" value="suite" name="features" checked> Пустой номер
-                    <input type="radio" value="leg" name="features" checked> Лежак
-                    <input type="radio" value="kog" name="features" checked> Когтеточка
-                    <input type="radio" value="game" name="features" checked> Игровой-комплекс
-                    <input type="radio" value="house" name="features" checked> Домик
-                </label>
-                <input type="button" value="Сбросить фильтр">
+        <h1>Наши номера</h1>
+        <section class="filters">
+            <h2 class="visually-hidden">Фильтры</h2>
+            <form action="#" method="GET">
+                <fieldset>
+                    <legend>Цена за сутки, <span>₽</span></legend>
+                    <label><span class="visually-hidden">от</span><input type="text" name="price" id="price-from" placeholder="от 100" value="100"></label>
+                    <label><span class="visually-hidden">до</span><input type="text" name="price" id="price-before" placeholder="до 600" value="600"></label>
+                </fieldset>
+                <fieldset>
+                    <legend>Площадь</legend>
+                    <label><input type="checkbox" value="0,62" name="area" value="0.62" checked>0,62 м2</label>
+                    <label><input type="checkbox" value="0,90" name="area" value="0.90" checked>0,90 м2</label>
+                    <label><input type="checkbox" value="1,13" name="area" value="1.13" checked>1,13 м2</label>
+                    <label><input type="checkbox" value="1,56" name="area" value="1.56" checked>1,56 м2</label>
+                    <label><input type="checkbox" value="2,56" name="area" value="2.56" checked>2,56 м2</label>
+                    <label><input type="checkbox" value="2,88" name="area" value="2.88" checked>2.88 м2</label>
+                </fieldset>
+                <fieldset>
+                    <legend>Оснащение номера</legend>
+                    <label><input type="checkbox" value="suite" name="equipment" checked value="empty">Пустой номер</label>
+                    <label><input type="checkbox" value="leg" name="equipment" checked value="sofa">Лежак</label>
+                    <label><input type="checkbox" value="kog" name="equipment" checked value="car-tree">Когтеточка</label>
+                    <label><input type="checkbox" value="game" name="equipment" checked value="toy">Игровой-комплекс</label>
+                    <label><input type="checkbox" value="house" name="equipment" checked value="house">Домик</label>
+                </fieldset>
+                <button type="reset">Сбросить фильтр</button>
             </form>
         </section>
-        <section class="rooms">
-            <h2>Наши номера</h2>
+        <section class="catalog">
+            <h2 class="visually-hidden">Каталог</h2>
             <select name="har" id="har">
-                <option value="by-area">По площади</option>
+                <option class="asc" value="1">По площади</option>
+                <option class="desc" value="2">По площади</option>
+                <option class="asc" value="3">По цене</option>
+                <option class="desc" value="4">По цене</option>
             </select>
-            <ul class="room-list">
-                <li class="room-list-item">
+            <ul class="catalog-list">
+                <li class="catalog-list-item">
                     <img src="room1.jpg" alt="Комната Эконом" width="270" height="185">
                     <h3>Эконом</h3>
-                    <p>Размеры (ШхГхВ) - <span>90х70х180 см</span></p>
-                    <p>Площадь - <span>0,63 м2</span></p>
-                    <p>Оснащение номера - <span>i</span></p>
-                    <p>Цена за сутки: <span>100₽</span></p>
-                    <a href="#">Забронировать</a>
+                    <ul>
+                        <li>Размеры (ШхГхВ) - <span>90х70х180 см</span></li>
+                        <li>Площадь - <span>0,63 м2</span></li>
+                        <li>Оснащение номера
+                            <ul>
+                                <li class="empty">Пустой номер</li>
+                            </ul>
+                        </li>
+                        <li>Цена за сутки: <span>100₽</span></li>
+                    </ul>
+                    <a href="card.html">Забронировать</a>
                 </li>
-                <li class="room-list-item">
-                    <img src="room1.jpg" alt="Комната Эконом" width="270" height="185">
-                    <h3>Эконом</h3>
-                    <p>Размеры (ШхГхВ) - <span>90х70х180 см</span></p>
-                    <p>Площадь - <span>0,63 м2</span></p>
-                    <p>Оснащение номера - <span>i</span></p>
-                    <p>Цена за сутки: <span>100₽</span></p>
-                    <a href="#">Забронировать</a>
+                <li class="catalog-list-item">
+                    <img src="room2.jpg" alt="Комната Эконом плюс" width="270" height="185">
+                    <h3>Эконом плюс</h3>
+                    <ul>
+                        <li>Размеры (ШхГхВ) - <span>90х100х180 см</span></li>
+                        <li>Площадь - <span>0,90 м2</span></li>
+                        <li>Оснащение номера
+                            <ul>
+                                <li class="sofa">Лежак</li>
+                                <li class="cat-tree">Когтеточка</li>
+                            </ul>
+                        </li>
+                        <li>Цена за сутки: <span>200₽</span></li>
+                    </ul>
+                    <a href="card.html">Забронировать</a>
                 </li>
-                <li class="room-list-item">
-                    <img src="room1.jpg" alt="Комната Эконом" width="270" height="185">
-                    <h3>Эконом</h3>
-                    <p>Размеры (ШхГхВ) - <span>90х70х180 см</span></p>
-                    <p>Площадь - <span>0,63 м2</span></p>
-                    <p>Оснащение номера - <span>i</span></p>
-                    <p>Цена за сутки: <span>100₽</span></p>
-                    <a href="#">Забронировать</a>
+                <li class="catalog-list-item">
+                    <img src="room3.jpg" alt="Комната Комфорт" width="270" height="185">
+                    <h3>Комфорт</h3>
+                    <ul>
+                        <li>Размеры (ШхГхВ) - <span>100х125х180 см</span></li>
+                        <li>Площадь - <span>1,13 м2</span></li>
+                        <li>Оснащение номера
+                            <ul>
+                                <li class="sofa">Лежак</li>
+                                <li class="cat-tree">Когтеточка</li>
+                                <li class="toy">Игровой-комплекс</li>
+                            </ul>
+                        </li>
+                        <li>Цена за сутки: <span>250₽</span></li>
+                    </ul>
+                    <a href="card.html">Забронировать</a>
                 </li>
-                <li class="room-list-item">
-                    <img src="room1.jpg" alt="Комната Эконом" width="270" height="185">
-                    <h3>Эконом</h3>
-                    <p>Размеры (ШхГхВ) - <span>90х70х180 см</span></p>
-                    <p>Площадь - <span>0,63 м2</span></p>
-                    <p>Оснащение номера - <span>i</span></p>
-                    <p>Цена за сутки: <span>100₽</span></p>
-                    <a href="#">Забронировать</a>
+                <li class="catalog-list-item">
+                    <img src="room4.jpg" alt="Комната Сьют" width="270" height="185">
+                    <h3>Сьют</h3>
+                    <ul>
+                        <li>Размеры (ШхГхВ) - <span>125х125х180 см</span></li>
+                        <li>Площадь - <span>1,56 м2</span></li>
+                        <li>Оснащение номера
+                            <ul>
+                                <li class="sofa">Лежак</li>
+                                <li class="cat-tree">Когтеточка</li>
+                                <li class="toy">Игровой-комплекс</li>
+                            </ul>
+                        </li>
+                        <li>Цена за сутки: <span>350₽</span></li>
+                    </ul>
+                    <a href="card.html">Забронировать</a>
                 </li>
-                <li class="room-list-item">
-                    <img src="room1.jpg" alt="Комната Эконом" width="270" height="185">
-                    <h3>Эконом</h3>
-                    <p>Размеры (ШхГхВ) - <span>90х70х180 см</span></p>
-                    <p>Площадь - <span>0,63 м2</span></p>
-                    <p>Оснащение номера - <span>i</span></p>
-                    <p>Цена за сутки: <span>100₽</span></p>
-                    <a href="#">Забронировать</a>
+                <li class="catalog-list-item">
+                    <img src="room5.jpg" alt="Комната Люкс" width="270" height="185">
+                    <h3>Люкс</h3>
+                    <ul>
+                        <li>Размеры (ШхГхВ) - <span>160х160х180 см</span></li>
+                        <li>Площадь - <span>2,56 м2</span></li>
+                        <li>Оснащение номера
+                            <ul>
+                                <li class="sofa">Лежак</li>
+                                <li class="cat-tree">Когтеточка</li>
+                                <li class="toy">Игровой-комплекс</li>
+                                <li class="house">Домик</li>
+                            </ul>
+                        </li>
+                        <li>Цена за сутки: <span>500₽</span></li>
+                    </ul>
+                    <a href="card.html">Забронировать</a>
                 </li>
-                <li class="room-list-item">
-                    <img src="room1.jpg" alt="Комната Эконом" width="270" height="185">
-                    <h3>Эконом</h3>
-                    <p>Размеры (ШхГхВ) - <span>90х70х180 см</span></p>
-                    <p>Площадь - <span>0,63 м2</span></p>
-                    <p>Оснащение номера - <span>i</span></p>
-                    <p>Цена за сутки: <span>100₽</span></p>
-                    <a href="#">Забронировать</a>
+                <li class="catalog-list-item">
+                    <img src="room1.jpg" alt="Комната Супер-Люкс" width="270" height="185">
+                    <h3>Супер-Люкс</h3>
+                    <ul>
+                        <li>Размеры (ШхГхВ) - <span>180х160х180 см</span></li>
+                        <li>Площадь - <span>2,88 м2</span></li>
+                        <li>Оснащение номера
+                            <ul>
+                                <li class="sofa">Лежак</li>
+                                <li class="cat-tree">Когтеточка</li>
+                                <li class="toy">Игровой-комплекс</li>
+                                <li class="house">Домик</li>
+                            </ul>
+                        </li>
+                        <li>Цена за сутки: <span>600₽</span></li>
+                    </ul>
+                    <a href="card.html">Забронировать</a>
                 </li>
             </ul>
         </section>
         <section class="promo2">
-            <h2 class="visually-hidden">Акция в отеле</h2>
+            <h2 class="visually-hidden">Акции и предложения</h2>
             <p>Каждый 7-й день <span>бесплатно!</span></p>
-            <p>Акция действует при размещении<br>
-                в номерах "Люкс" и "Супер-Люкс"</p>
+            <p>Акция действует при размещении в номерах "Люкс" и "Супер-Люкс"</p>
             <a href="#">Забронировать</a>
-            <img src="promo2.png" alt="Кот и акция" width="550" height="380">
         </section>
     </main>
     <footer class="main-footer">
@@ -166,7 +217,7 @@
         </section>
         <section class="footer-nav">
             <h2 class="visually-hidden">Дополнительная навигация по сайту</h2>
-                <a class="logo">
+                <a href="index.html" class="logo">
                     <img src="img/logo.png" alt="Логотип отеля Котейка" width="63" height="52">
                 </a>
                 <ul class="navigation-list">
